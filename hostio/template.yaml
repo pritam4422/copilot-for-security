@@ -16,11 +16,6 @@ paths:
           schema:
             type: string
           required: true
-        - in: query
-          name: token
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful authentication.
@@ -34,11 +29,6 @@ paths:
       parameters:
         - in: path
           name: domain
-          schema:
-            type: string
-          required: true
-        - in: query
-          name: token
           schema:
             type: string
           required: true
@@ -58,11 +48,6 @@ paths:
           schema:
             type: string
           required: true
-        - in: query
-          name: token
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful authentication.
@@ -76,11 +61,6 @@ paths:
       parameters:
         - in: path
           name: domain
-          schema:
-            type: string
-          required: true
-        - in: query
-          name: token
           schema:
             type: string
           required: true
@@ -100,11 +80,6 @@ paths:
           schema:
             type: string
           required: true
-        - in: query
-          name: token
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful authentication.
@@ -118,11 +93,6 @@ paths:
       parameters:
         - in: path
           name: nsvalue
-          schema:
-            type: string
-          required: true
-        - in: query
-          name: token
           schema:
             type: string
           required: true
@@ -142,11 +112,6 @@ paths:
           schema:
             type: string
           required: true
-        - in: query
-          name: token
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful authentication.
@@ -160,11 +125,6 @@ paths:
       parameters:
         - in: path
           name: asnvalue
-          schema:
-            type: string
-          required: true
-        - in: query
-          name: token
           schema:
             type: string
           required: true
@@ -184,11 +144,6 @@ paths:
           schema:
             type: string
           required: true
-        - in: query
-          name: token
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful authentication.
@@ -202,11 +157,6 @@ paths:
       parameters:
         - in: path
           name: redirectsvalue
-          schema:
-            type: string
-          required: true
-        - in: query
-          name: token
           schema:
             type: string
           required: true
@@ -226,11 +176,6 @@ paths:
           schema:
             type: string
           required: true
-        - in: query
-          name: token
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful authentication.
@@ -247,11 +192,6 @@ paths:
           schema:
             type: string
           required: true
-        - in: query
-          name: token
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: Successful authentication.
@@ -265,11 +205,6 @@ paths:
       parameters:
         - in: path
           name: emailvalue
-          schema:
-            type: string
-          required: true
-        - in: query
-          name: token
           schema:
             type: string
           required: true
