@@ -1,1 +1,290 @@
+openapi: 3.0.0
 
+info:
+  title: host.io demo
+  description: test for host.io api
+  version: "1.0.0"
+
+servers:
+  - url: https://host.io
+
+paths:
+  /api/web/{$domain}?token={$token}:
+    get:
+      operationId: Get Information on Domain from web
+      summary: Metadata scraped from a domain homepage.
+      parameters:
+        - in: path
+          name: domain
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  
+  /api/dns/{$domain}?token={$token}:
+    get:
+      operationId: Get all the DNS records stored for a domain
+      parameters:
+        - in: path
+          name: domain
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  
+  /api/related/{$domain}?token={$token}:
+    get:
+      operationId: Get a count of the number of related domains for all supported lookups
+      parameters:
+        - in: path
+          name: domain
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  
+  /api/full/{$domain}?token={$token}:
+    get:
+      operationId: A single endpoint that includes the data from /api/web, /api/dns, /api/related and IPinfo.
+      parameters:
+        - in: path
+          name: domain
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  
+  /api/domains/ip/{$ipvalue}?token={$token}:
+    get:
+      operationId: Get info on IP address (v4 or v6)
+      parameters:
+        - in: path
+          name: ipvalue
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  /api/domains/ns/{$nsvalue}?token={$token}:
+    get:
+      operationId: Get info using DNS Nameserver (NS) record (root domain)
+      parameters:
+        - in: path
+          name: nsvalue
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  /api/domains/mx/{$mxvalue}?token={$token}:
+    get:
+      operationId: Get info using DNS Mailserver (MX) record (root domain)
+      parameters:
+        - in: path
+          name: mxvalue
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  /api/domains/asn/{$asnvalue}?token={$token}:
+    get:
+      operationId: Get info on ASN
+      parameters:
+        - in: path
+          name: asnvalue
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  /api/domains/backlinks/{$backlinksvalue}?token={$token}:
+    get:
+      operationId: Get info using Domains that include a link to the domain on their homepage
+      parameters:
+        - in: path
+          name: backlinksvalue
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  /api/domains/redirects/{$redirectsvalue}?token={$token}:
+    get:
+      operationId: Get info on Domains that redirect to the domain from their homepage
+      parameters:
+        - in: path
+          name: redirectsvalue
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  /api/domains/adsense/{$adsensevalue}?token={$token}:
+    get:
+      operationId: Get info using Domains that include an adsense ID on their homepage
+      parameters:
+        - in: path
+          name: adsensevalue
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  /api/domains/gtm/{$gtmvalue}?token={$token}:
+    get:
+      operationId: Get info on Domains having the google tag manager ID on their homepage
+      parameters:
+        - in: path
+          name: gtmvalue
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+  /api/domains/email/{$emailvalue}?token={$token}:
+    get:
+      operationId: Get info on Domains that include an email address on their homepage
+      parameters:
+        - in: path
+          name: emailvalue
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successful authentication.
+        400:
+          description: Unsuccessful authentication.
+        404:
+          description: Data Not Found.
+          
