@@ -6,7 +6,7 @@ info:
 servers:
   - url: https://management.azure.com
 paths:
-  /subscriptions/{SUBSCRIPTION_ID}/providers/Microsoft.Security/assessmentMetadata/{assessment_id}?api-version=2025-01-01-preview:
+  /subscriptions/{SUBSCRIPTION_ID}/providers/Microsoft.Security/assessmentMetadata/{assessment_id}?api-version=2020-01-01:
     get:
       operationId: AssessmentMetadata_Get
       summary: Get assessment metadata
